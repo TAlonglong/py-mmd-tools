@@ -22,6 +22,7 @@ class test_pymmdtools(unittest.TestCase):
         self.not_a_valid_xml = str(current_dir / 'tests' / 'data' / 'not_a_valid_xml.xml')
         # XML tools from MMD:
         self.mmd2iso_xslt = os.path.join(os.environ['MMD_PATH'], 'xslt/mmd-to-iso.xsl')
+        #self.mmd2inspire_xslt = os.path.join(os.environ['MMD_PATH'], 'xslt/mmd-to-inspire.xsl')
         self.reference_xsd = os.path.join(os.environ['MMD_PATH'], 'xsd/mmd.xsd')
  
     def test_xml_check_assertTrue(self):
@@ -52,6 +53,9 @@ class test_pymmdtools(unittest.TestCase):
     def test_xsl_check_assertRaises_OSError_opt_xmlfile(self):
         self.assertRaises(OSError, xsd_check, self.not_a_file, 
                                                     self.not_a_file)                               
+
+    def test_translation_from_mmd_to_inspire(self):
+        pass
 
     def test_xml_translate_assertMultiLineEqual_validation_false(self):
         self.maxDiff = None
