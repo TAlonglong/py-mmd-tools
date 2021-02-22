@@ -18,10 +18,11 @@ class test_pymmdtools(unittest.TestCase):
         current_dir = pathlib.Path.cwd()
         self.reference_xml = str(current_dir / 'tests' / 'data' / 'reference_mmd.xml')
         self.reference_iso = str(current_dir / 'tests' / 'data' / 'reference_iso.xml')
-        self.mmd2iso_xslt = str(current_dir / 'tests' / 'data' / 'mmd-to-iso.xsl')
-        self.reference_xsd = os.path.join(os.environ['MMD_PATH'], 'xsd/mmd.xsd')
         self.not_a_file = str(current_dir / 'tests' / 'data' / 'not_a_file.xml')
         self.not_a_valid_xml = str(current_dir / 'tests' / 'data' / 'not_a_valid_xml.xml')
+        # XML tools from MMD:
+        self.mmd2iso_xslt = os.path.join(os.environ['MMD_PATH'], 'xslt/mmd-to-iso.xsl')
+        self.reference_xsd = os.path.join(os.environ['MMD_PATH'], 'xsd/mmd.xsd')
  
     def test_xml_check_assertTrue(self):
         self.assertTrue(xml_check(xml_file=self.reference_xml))
