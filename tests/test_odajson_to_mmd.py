@@ -5,6 +5,7 @@
      https://github.com/metno/py-mmd-tools/blob/master/LICENSE)
 """
 
+import os
 import unittest
 import pathlib
 import tempfile
